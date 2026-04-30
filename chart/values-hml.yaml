@@ -1,0 +1,4 @@
+# Homolog environment overrides.
+# image.tag is promoted automatically from values-dev.yaml when 'release' is pushed.
+image:
+  tag: latest

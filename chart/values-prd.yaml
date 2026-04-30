@@ -1,0 +1,14 @@
+# Production environment overrides.
+# image.tag is promoted automatically from values-hml.yaml when 'main' is pushed.
+image:
+  tag: latest
+
+replicaCount: 2
+
+resources:
+  requests:
+    cpu: 200m
+    memory: 512Mi
+  limits:
+    cpu: 1000m
+    memory: 1Gi

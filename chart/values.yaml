@@ -1,3 +1,5 @@
+# Base values shared across all environments.
+# Environment-specific overrides live in values-dev.yaml, values-hml.yaml, values-prd.yaml.
 replicaCount: 1
 
 image:

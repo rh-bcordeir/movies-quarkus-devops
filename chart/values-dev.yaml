@@ -1,0 +1,4 @@
+# Dev environment overrides.
+# image.tag is updated automatically by the CI pipeline on every push to 'develop'.
+image:
+  tag: latest
