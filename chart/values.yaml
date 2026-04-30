@@ -1,7 +1,7 @@
 replicaCount: 1
 
 image:
-  repository: image-registry.openshift-image-registry.svc:5000/movies-quarkus/movies-quarkus
+  repository: quay.io/rh-ee-bcordeir/movies-quarkus
   tag: latest
   pullPolicy: IfNotPresent
 
