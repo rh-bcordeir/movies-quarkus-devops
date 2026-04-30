@@ -5,10 +5,10 @@ metadata:
   labels:
     {{- include "movies-quarkus.labels" . | nindent 4 }}
 spec:
-  type: {{ .Values.service.type }}
+  type: {{ .Values.service.type | default "ClusterIP" }}
   ports:
     - name: http
-      port: {{ .Values.service.port }}
+      port: {{ .Values.service.port | default 8080 }}
       targetPort: http
       protocol: TCP
   selector:

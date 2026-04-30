@@ -1,4 +1,4 @@
-{{- if .Values.route.enabled }}
+{{- if .Values.route.enabled | default true }}
 apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
@@ -12,6 +12,6 @@ spec:
   port:
     targetPort: http
   tls:
-    termination: {{ .Values.route.tls.termination }}
-    insecureEdgeTerminationPolicy: {{ .Values.route.tls.insecureEdgeTerminationPolicy }}
+    termination: {{ .Values.route.tls.termination | default "edge" }}
+    insecureEdgeTerminationPolicy: {{ .Values.route.tls.insecureEdgeTerminationPolicy | default "Redirect" }}
 {{- end }}
