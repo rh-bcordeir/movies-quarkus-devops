@@ -1,0 +1,30 @@
+replicaCount: 1
+
+image:
+  repository: image-registry.openshift-image-registry.svc:5000/movies-quarkus/movies-quarkus
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 8080
+
+route:
+  enabled: true
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 256Mi
+  limits:
+    cpu: 500m
+    memory: 512Mi
+
+probes:
+  liveness:
+    path: /q/health/live
+  readiness:
+    path: /q/health/ready
