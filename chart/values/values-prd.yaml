@@ -1,5 +1,5 @@
 image:
-  tag: f11d29e
+  tag: f41f0ca
 replicaCount: 2
 resources:
   requests:
